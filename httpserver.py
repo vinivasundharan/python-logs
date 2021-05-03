@@ -30,7 +30,7 @@ class MyHttpRequestHandler(http.server.SimpleHTTPRequestHandler):
         <iframe source="{name}-as.html" width=800 height=2000 frameborder=0></iframe>
         </body></html>"""
         
-        output = (subprocess.check_output(['cmd', '/c', 'oc logs --tail=-1 -n awl-{name} -l product=partner,type=as'])).decode();
+        output = (subprocess.check_output(['cmd', '/c', 'oc logs --tail=-1 -n awl-sit -l product=partner,type=as'])).decode();
         output = "<br />".join(output.split("\n"))
         
         # Writing the HTML contents with UTF-8
